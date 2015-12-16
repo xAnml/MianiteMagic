@@ -1,0 +1,7 @@
+name: MianteMagic
+author: Anml
+main: net.anmlmc.mianitemagic.Main
+version: 1.0
+description: MianiteMagic (Commission)
+commands:
+  report:

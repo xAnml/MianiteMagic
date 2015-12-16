@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MianiteMagic">
+    <output-path>$PROJECT_DIR$/../../Jars</output-path>
+    <root id="archive" name="MianiteMagic.jar">
+      <element id="module-output" name="MianiteMagic" />
+    </root>
+  </artifact>
+</component>
