@@ -53,15 +53,11 @@ public class MySQL {
     public void createTables() {
 
         try {
-            executeUpdate("CREATE TABLE IF NOT EXISTS `SpellPlayerManager` (UUID VARCHAR(100), " +
-            /* GENERAL */  "Cure VARCHAR(10), Diving VARCHAR(10), Leap VARCHAR(10), Shadow VARCHAR(10), " +
-            /* OFFENSIVE */ "Explode VARCHAR(10), Shock VARCHAR(10), Fireball VARCHAR(10), Freeze VARCHAR(10), Slowness VARCHAR(10), " +
-            /* DEFENSIVE */ "Dash VARCHAR(10), Invisibility VARCHAR(10))");
             executeUpdate("CREATE TABLE IF NOT EXISTS `SpellPlayerInfo` (UUID VARCHAR(10), Mana INTEGER, " +
                     "GeneralLevel INTEGER, GeneralExperience INTEGER, " +
-                    "OffensiveExperience INTEGER, OffensiveExperience INTEGER, " +
+                    "OffensiveLevel INTEGER, OffensiveExperience INTEGER, " +
                     "DefensiveLevel INTEGER, DefensiveExperience INTEGER, " +
-                    "Active1 VARCHAR(50), Active2 VARCHAR(50), Active3 (50))");
+                    "ActiveSpell VARCHAR(50))");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -76,23 +72,23 @@ public class MySQL {
         String username = "MySQL.Username";
         String password = "MySQL.Password";
 
-        if(!config.contains(host)) {
+        if (!config.contains(host)) {
             config.set(host, "localhost");
         }
 
-        if(!config.contains(port)) {
+        if (!config.contains(port)) {
             config.set(port, "3306");
         }
 
-        if(!config.contains(database)) {
+        if (!config.contains(database)) {
             config.set(database, "database");
         }
 
-        if(!config.contains(username)) {
+        if (!config.contains(username)) {
             config.set(username, "username");
         }
 
-        if(!config.contains(password)) {
+        if (!config.contains(password)) {
             config.set(password, "password");
         }
 

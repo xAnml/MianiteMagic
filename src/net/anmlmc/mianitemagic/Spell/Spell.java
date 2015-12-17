@@ -1,5 +1,7 @@
 package net.anmlmc.mianitemagic.Spell;
 
+import net.anmlmc.mianitemagic.Utils.MessageManager;
+
 /**
  * Created by kishanpatel on 12/12/15.
  */
@@ -19,15 +21,12 @@ public enum Spell {
     DASH("Dash", SpellCategory.DEFENSIVE, 1, false, "Gives you speed for a certain time."),
     INVISIBILITY("Invisibility", SpellCategory.DEFENSIVE, 0, false, "Gives you invisibility for a certain time.");
 
+    public SpellManager sm = new SpellManager();
+    public MessageManager mm = new MessageManager();
     String name;
     SpellCategory category;
     int level;
     boolean needsTarget;
-
-    public String getDescription() {
-        return description;
-    }
-
     String description;
 
     Spell(String name, SpellCategory category, int level, boolean needsTarget, String description) {
@@ -38,10 +37,12 @@ public enum Spell {
         this.description = description;
     }
 
-    public SpellManager sm = new SpellManager();
+    public String getDescription() {
+        return description;
+    }
 
     public int getCost(Spell spell) {
-         return sm.getCost(spell);
+        return sm.getCost(spell);
 
     }
 
@@ -61,5 +62,7 @@ public enum Spell {
         return level;
     }
 
-    public boolean needsTarget() { return needsTarget; }
+    public boolean needsTarget() {
+        return needsTarget;
+    }
 }

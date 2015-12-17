@@ -9,11 +9,11 @@ public enum SpellCategory {
 
     String name;
 
-    public String getName() {
-        return name;
-    }
-
     SpellCategory(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }
